@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Nested Framesets in HTML</title>
+</head>
+
+<!-- Frameset tag starts from here -->
+
+<!-- We divide the whole website into three rows -->
+<!-- "*" divides equally based on the left space -->
+<frameset rows="50%,*,*">
+
+	<!-- Here we are defining the columns
+		in the first row -->
+	<!-- It is set to 100% which means that
+		it will cover first row by 100% -->
+	<frameset cols="100%">
+
+		<!-- Defining the frame which is
+			to be inserted -->
+		<frame name="frame1" src="MyFirstPage.html">
+
+	</frameset>
+
+	<!-- Here we are defining the columns
+		in the second row -->
+	<frameset cols="*, *, *">
+		<frame name="frame2" src="controls.html">
+		<frame name="frame3" src="controls1.html">
+		<frame name="frame4" src="registration.html">
+	</frameset>
+
+	<!-- Now the final third row which will
+		cover the rest space -->
+	<frame name="frame5" src="frame5.html">
+
+</frameset>
+<!-- frameset tag ends here -->
+
+</html>
