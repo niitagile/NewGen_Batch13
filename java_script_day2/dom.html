@@ -1,0 +1,22 @@
+<html>
+    <head>
+    </head>
+    <body>
+       
+        <script>
+          function compare(){
+            var val1=document.getElementById("txtval1").value;
+            var val2=document.getElementById("txtval2").value;
+             if(val1==val2)  
+               document.getElementById("ans").innerHTML="both are equal";
+               else
+               document.getElementById("ans").innerHTML="both are not equal";
+          }
+
+        </script>
+ <input type="text" id="txtval1">
+ <input type="text" id="txtval2" onblur="compare()">
+ 
+ <p id="ans" style="border: 2px solid">result</p>
+</body>
+</html>    
