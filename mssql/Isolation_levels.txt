@@ -1,0 +1,72 @@
+Using Isolation Level in Transaction
+
+ Isolating/separating transactions from each other to maintain Data Integrity in Database is called Isolation.
+Isolation helps to remove following :
+
+Loss of Data-- there are 2 users - UserA and User B. They both are trying to update same record lets say rollno 101 record at the same time. Let assume User A is setting email as abc@gmail.com and at the same time user B is setting email as abcd@gmail.com. then is the last value saved in table? abcd@gmail.com will be saved and abc@gmail.com will be lost.
+
+Dirty Read--not getting update =d data from table
+
+Phantom Read- User A is having permission to insert data but user B has already insterted that data
+
+Inconsistency Analysis- Getting final result on some other values
+
+There are 5 isolation leveles
+BEGIN TRANSACTION MyTransaction  
+BEGIN TRY  
+	UPDATE Account SET Debit=100 WHERE Name='John Cena'  
+	UPDATE ContactInformation SET Mobile='1234567890' WHERE Name='The Rock'  
+	COMMIT TRANSACTION MyTransaction  
+	PRINT 'TRANSACTION SUCCESS'  
+END TRY  
+BEGIN CATCH  
+	ROLLBACK TRANSACTION MyTransaction  
+	PRINT 'TRANSACTION FAILED'  
+END CATCH   
+
+
+1) Read Uncommited
+ With this isolation level, we allow a transaction to read the data which is being updated by other transaction and not yet committed.
+SET TRANSACTION ISOLATION LEVEL   
+READ UNCOMMITTED  
+BEGIN TRANSACTION MyTransaction  
+BEGIN TRY  
+	UPDATE Account SET Debit=100 WHERE Name='John Cena'  
+	UPDATE ContactInformation SET Mobile='1234567890' WHERE Name='The Rock'  
+	COMMIT TRANSACTION MyTransaction  
+	PRINT 'TRANSACTION SUCCESS'  
+END TRY  
+BEGIN CATCH  
+	ROLLBACK TRANSACTION MyTransaction  
+	PRINT 'TRANSACTION FAILED'  
+END CATCH  
+
+
+2) Read Commited
+ This will force user to wait for the current transaction to finish up its job
+SET TRANSACTION ISOLATION LEVEL   
+READ COMMITTED
+BEGIN TRANSACTION MyTransaction  
+BEGIN TRY  
+	UPDATE Account SET Debit=100 WHERE Name='John Cena'  
+	UPDATE ContactInformation SET Mobile='1234567890' WHERE Name='The Rock'  
+	COMMIT TRANSACTION MyTransaction  
+	PRINT 'TRANSACTION SUCCESS'  
+END TRY  
+BEGIN CATCH  
+	ROLLBACK TRANSACTION MyTransaction  
+	PRINT 'TRANSACTION FAILED'  
+END CATCH  
+
+3)  Repeatable read
+SET TRANSACTION ISOLATION LEVEL   
+REPEATABLE READ 
+4) Snapshot
+this level takes a snapshot of current data. Every transaction works on its own copy of data.
+SET TRANSACTION ISOLATION LEVEL   
+SNAPSHOT 
+
+5) Serializable
+ It asks User A to wait for the current transaction for any kind of operation he wants to perform.
+SET TRANSACTION ISOLATION LEVEL   
+SERIALIZABLE 
