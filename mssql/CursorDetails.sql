@@ -27,3 +27,29 @@ CLOSE cursor_product;
 DEALLOCATE cursor_product;
 
 
+--Update values cursor in sql server 
+-- declare a cursor
+
+
+DECLARE update_cursor CURSOR FOR 
+SELECT Order_ID,quantity from Sales.Order_items WHERE Order_ID=110
+
+-- open cursor and fetch first row into variables
+OPEN update_cursor
+FETCH FROM update_cursor
+
+-- check for a new row
+WHILE @@FETCH_STATUS=0
+BEGIN
+-- do update operation
+UPDATE Sales.Order_items SET quantity=100 WHERE CURRENT OF update_cursor 
+-- get next available row into variables
+FETCH NEXT FROM update_cursor
+END
+close update_cursor
+Deallocate update_cursor
+
+select * from sales.order_items where order_id =110
+
+
+
