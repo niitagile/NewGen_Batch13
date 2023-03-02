@@ -6,6 +6,7 @@ class Result{
 	private int rollno;
 	private int marks[]=new int[3];
 	private int total;
+	final String course="Btech";//can't change value of final
 	void getData() {
 		Scanner sc=new Scanner(System.in);
 		System.out.println("Enter rollno");
@@ -14,21 +15,25 @@ class Result{
 		for(int i=0;i<marks.length;i++) {
 			marks[i]=sc.nextInt();
 		}
+		
 	}
 		void display() {
 				System.out.println("rollno="+rollno);
-				int sum=0;
+				System.out.println("course="+course);
 				for(int val :marks) {
 				System.out.println(val+ " ");
-				sum+=val;
+				total+=val;
 				}
 				System.out.println("Sum="+total);
+				
 		}
 		
 	
 }
 public class ArrayInClassExample {
 public static void main(String[] args) {
-	
+	Result obj=new Result();
+	obj.getData();
+	obj.display();
 }
 }
