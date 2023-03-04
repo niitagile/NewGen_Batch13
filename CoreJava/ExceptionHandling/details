@@ -1,0 +1,53 @@
+Exception -- one unavoidable condition due to user given data or resource information is not correct
+stops execution of the program forcefully
+5/0
+Exception handling
+Throwable  -printStackTrace(),getMessage()
+	Exception
+		IOException
+		SQLException
+		ClassNotFoundException
+		FileNotFoundException
+		InterruptedException
+		IlllegalAccessException
+		RuntimeException
+			ArithmeticException
+			NullPointerException String s; s.toUpperCase();
+			NumberFormatException "A101" "101"
+			ArrayIndexOutofBoundsException 	
+			ClassCasteException Person--> Vehicle   Teacher--> Person(possible)
+			InvalidArgumentException
+	
+	Error
+		Stackoverflowerror
+		Virtualmachineerror
+		outofmemoryerror	
+		
+Exceptions-- try, throw, throws, catch, finally	
+try - a block where we are putting statements which can generate exception
+catch- a block which handles exception
+finally - a block which always executes whether exception is thrown or not
+throw- throw an exception in object format
+throws= which we use with method to make list of all exceptions
+
+try{}
+catch(){}
+catch(){}
+finally{}
+
+
+
+try{}
+finally{}
+
+
+String s;
+System.out.println(s.toUpperCase());
+
+
+
+
+
+
+
+	
