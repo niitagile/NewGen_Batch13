@@ -1,0 +1,74 @@
+Collections - is a framework to implement data structure
+all classes are generics.
+They use only object
+
+class Test{
+	double a,b;
+	Test(double a, double b){
+		this.a=a;
+		this.b=b;
+	}
+	double addition(){
+	return a+b;
+	}
+
+}
+**************************
+A generic class
+class Test<T>{
+	T a,b;
+	Test(T a, T b){
+		this.a=a;
+		this.b=b;
+	}
+	T addition(){
+	return a+b;
+	}
+
+}
+
+Test<Double> t=new Test<>(5.8,6.7);
+System.out.println(t.addition());
+
+
+Test<Integer> t=new Test<>(5,6);
+System.out.println(t.addition());
+Test<int> t=new Test<>(5,6);//error
+
+****************************************************************************
+
+Collections-- framework-- data structure, generic classes
+Iterator- interface (hasNext(), next())
+Collections -- interface add() remove() set() isEmpty()..
+	List interface(insertion order)
+	-classes
+		ArrayList()
+		LinkedList
+		Vector
+			-stack (LIFO)	
+	Queue (FIFO)
+		PriortyQueue
+		ArrayDeque (Deque+LinkedList)
+	Set (Unique values)
+		HashSet 
+		LinkedHashSet
+		TreeSet(SortedSet interface)
+		EnumSet
+Array/ArrayList/Vector--
+	array is having fixed length
+	int arr[]=new int[10];
+	arr[]=new int[20];
+	arraylist can be extended at run time
+	Vector is legacy class
+	arrayList increase its size more than half,not synchronized
+	vector increases its size double, synchronize
+arraylist/linkedlist
+	arraylist is good for traversing
+	linkedlist is good for insertion and deletion
+
+collections store only objects not primitive data types
+
+
+
+
+		
