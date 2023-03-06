@@ -13,6 +13,13 @@ class Test{
 	}
 
 }
+Test t=new Test(5.8,6.7);
+System.out.println(t.addition());
+
+
+Test t=new Test('C','d');
+System.out.println(t.addition());
+
 **************************
 A generic class
 class Test<T>{
@@ -36,6 +43,18 @@ System.out.println(t.addition());
 Test<int> t=new Test<>(5,6);//error
 
 ****************************************************************************
+
+		Wrapper Classes- converts primitive to object and object to primitive
+boolean- Boolean
+char-Character
+
+byte-Byte
+short-Short
+int-Integer
+long-Long
+
+float-Float
+double-Double		
 
 Collections-- framework-- data structure, generic classes
 Iterator- interface (hasNext(), next())
