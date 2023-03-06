@@ -20,13 +20,17 @@ stk.push(null);
 //prints elements of the stack  
 System.out.println("Elements in Stack: " + stk);  
 
-//It throws EmptyStackException if the stack is empty.
+
 
 	System.out.println((Integer)stk.pop());// reads top value and remove it from stack && returns value in object format
 	System.out.println((Integer)stk.peek());// reads top value
 
 System.out.println("Elements in Stack: " + stk);  
 System.out.println(stk.search(113)+ " position");
+
+stk.clear();
+
+System.out.println((Integer)stk.peek());//It throws EmptyStackException if the stack is empty.
 
 }  
 }  

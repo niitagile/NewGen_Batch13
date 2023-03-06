@@ -29,7 +29,7 @@ public class Example1 {
 			
 			System.out.println(itr.next());
 		}
-		
+		//manipulate values
 		for(int i=0;i<obj1.size();i++) {
 			int val=obj1.get(i);
 			val=val+10;
